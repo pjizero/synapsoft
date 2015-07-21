@@ -6,7 +6,7 @@ public class Test {
 	public static void main( String args[] ) {
 		ArrayList<String> intList = new ArrayList<String>();		//자연수를 입력받기 위한 스트링리스트	
 
-		StringBuffer str1 = new StringBuffer();						//자연수 조합을 담기위한 스트링버퍼
+		StringBuffer str1 = new StringBuffer();				//자연수 조합을 담기위한 스트링버퍼
 		StringBuffer str2 = new StringBuffer();
 		
 		int parseA, minTotal, i = 0, j = 0, non = 0, idx;
@@ -17,7 +17,7 @@ public class Test {
 			//'0'의 개수를 카운트하기위한 변수
 		
 		String num;				//숫자를 입력받기 위한 변수
-		String temp1, temp2;	//String형 자연수조합을 담은 str1, str2를 int형으로 변환해 담을 변수
+		String temp1, temp2;			//String형 자연수조합을 담은 str1, str2를 int형으로 변환해 담을 변수
 		
 		start:
 		while(true){
@@ -50,7 +50,7 @@ public class Test {
 		/*입력받은 수의 개수가 홀수일 경우*/
 		if( intList.size() % 2 != 0 ) {
 			idx = 0;
-			if( !intList.get(0).equals("0") ) {							//정렬된 리스트에 '0'이 없을 경우
+			if( !intList.get(0).equals("0") ) {						//정렬된 리스트에 '0'이 없을 경우
 				for( i = 0; i < intList.size(); i += 2 ) { 				//인덱스를 2씩 증가시켜 자연수 조합
 					str1.insert(idx, intList.get(i).toString());
 					if( i + 1 < intList.size() ) {
@@ -68,7 +68,7 @@ public class Test {
 					if( !intList.get(i).equals("0") ) break;
 				} nonzeroIDX = i;
 				if( nonzeroIDX + 1 == intList.size() ) {				//nonzeroIDX에 1을 더해서 리스트의 크기와 같으면 
-					System.out.println("-1");							//두개의 자연수 조합이 불가능한것으로 보아 '-1' 출력
+					System.out.println("-1");					//두개의 자연수 조합이 불가능한것으로 보아 '-1' 출력
 				}
 				/*'0'의 개수가 짝수개 일 때*/
 				else if( i % 2 == 0 ) {					
@@ -79,7 +79,7 @@ public class Test {
 					for( i = nonzeroIDX + 2; i < intList.size(); i+=2 ) {
 						idx++;
 						str1.insert(idx, intList.get(i).toString());
-						non = nonzeroIDX + 1;							//두번째로 나온 '0'이 아닌 숫자의 위치
+						non = nonzeroIDX + 1;				//두번째로 나온 '0'이 아닌 숫자의 위치
 						if( non < intList.size() ) {
 							idx = 0;
 							str2.insert(idx, intList.get(non).toString());
@@ -128,7 +128,7 @@ public class Test {
 				temp2 = str2.toString();
 				minTotal = Integer.parseInt(temp1) + Integer.parseInt(temp2);
 				System.out.println(minTotal);
-			} else if( intList.get(0).equals("0") ) {			//정렬된 리스트에 '0'이 있을 경우
+			} else if( intList.get(0).equals("0") ) {				//정렬된 리스트에 '0'이 있을 경우
 				for( i = 0; i < intList.size(); i++ ) {
 					if( !intList.get(i).equals("0") ) break;
 				} nonzeroIDX = i;
