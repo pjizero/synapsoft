@@ -75,11 +75,11 @@ public class Test {
 					str1.insert(idx, intList.get(nonzeroIDX).toString());		
 						//'0'이 자연수조합에 첫번째로 올 수 없으니 첫번째로 나온 '0'이 아닌 숫자를 첫번째 자연수 조합의 첫번째 자리로 입력
 					idx++;
-					str1.insert(idx, intList.get(j).toString());		//맨 처음의 숫자'0'을 두번째 자리에 입력
+					str1.insert(idx, intList.get(j).toString());			//맨 처음의 숫자'0'을 두번째 자리에 입력
 					for( i = nonzeroIDX + 2; i < intList.size(); i+=2 ) {
 						idx++;
 						str1.insert(idx, intList.get(i).toString());
-						non = nonzeroIDX + 1;				//두번째로 나온 '0'이 아닌 숫자의 위치
+						non = nonzeroIDX + 1;					//두번째로 나온 '0'이 아닌 숫자의 위치
 						if( non < intList.size() ) {
 							idx = 0;
 							str2.insert(idx, intList.get(non).toString());
